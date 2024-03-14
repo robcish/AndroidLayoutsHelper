@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "Robert R"
-version = "1.0"
+version = "1.1"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2023.1.5")
+    version.set("2023.1.1")
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf("android"))
@@ -33,8 +33,8 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild.set("221")
-        untilBuild.set("231.*")
+        sinceBuild.set("222")
+        untilBuild.set("233.*")
     }
 
     signPlugin {
