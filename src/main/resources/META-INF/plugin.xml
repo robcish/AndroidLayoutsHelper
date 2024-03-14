@@ -1,0 +1,49 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>robert.AndroidLayoutsHelper</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Android Layouts Helper</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor>Robert R</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>A plugin that allows you to quickly set dark mode, layout bounds, font size, display size,
+        animation duration and show rendering bars. Those actions are available in "LAYOUT HELPER" tool window.<![CDATA[<br><br>]]>
+        Also: <![CDATA[<br>]]>
+        dark mode toggle under shift + ctrl + (win/command) + "D", <![CDATA[<br>]]>
+        layout bounds toggle under shift + ctrl + (win/command) + "B". <![CDATA[<br>]]>
+        Buttons with those two toggles are also available in ToolsMenu.<![CDATA[<br><br>]]>
+        Plugin will try to apply changes to all active ADB devices.
+    </description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <depends>org.jetbrains.android</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow icon="AllIcons.Actions.Lightning" id="LAYOUT HELPER"
+                    factoryClass="robert.androidlayoutshelper.toolWindow.PluginToolWindowFactory"/>
+    </extensions>
+    <actions>
+        <action id="robert.androidlayoutshelper.shortcutAction.LayoutBounds" class="robert.androidlayoutshelper.shortcutAction.LayoutBounds"
+                text="Toggle Layout Bounds" description="Toggle layout bounds">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl meta B"/>
+        </action>
+        <action id="robert.androidlayoutshelper.shortcutAction.DarkMode" class="robert.androidlayoutshelper.shortcutAction.DarkMode"
+                text="Toggle Dark Mode" description="Toggle dark mode">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl meta D"/>
+        </action>
+    </actions>
+</idea-plugin>
