@@ -2,27 +2,27 @@ package robert.androidlayoutshelper.toolWindow.panel
 
 import com.intellij.openapi.project.Project
 import org.jetbrains.android.sdk.AndroidSdkUtils
-import robert.androidlayoutshelper.Commands.layoutBoundsOff
-import robert.androidlayoutshelper.Commands.layoutBoundsOn
+import robert.androidlayoutshelper.Commands.profileGPURenderingOff
+import robert.androidlayoutshelper.Commands.profileGPURenderingOn
 import java.awt.FlowLayout
 import javax.swing.JButton
 import javax.swing.JLabel
 import javax.swing.JPanel
 
-object LayoutBoundsPanel {
-    fun addLayoutBoundsPanel(project: Project): JPanel {
-        val layoutBoundsPanel = JPanel(FlowLayout(FlowLayout.LEFT))
-        layoutBoundsPanel.add(JLabel("Show layout bounds "))
+object ProfileGPURenderingPanel {
+    fun addProfileGPURenderingPanel(project: Project): JPanel {
+        val renderingBarsPanel = JPanel(FlowLayout(FlowLayout.LEFT))
+        renderingBarsPanel.add(JLabel("Profile GPU Rendering "))
 
         val onButton = JButton("on")
         onButton.addActionListener { onButtonClick(project, true) }
-        layoutBoundsPanel.add(onButton)
+        renderingBarsPanel.add(onButton)
 
         val offButton = JButton("off")
         offButton.addActionListener { onButtonClick(project, false) }
-        layoutBoundsPanel.add(offButton)
+        renderingBarsPanel.add(offButton)
 
-        return layoutBoundsPanel
+        return renderingBarsPanel
     }
 
     private fun onButtonClick(project: Project, show: Boolean) {
@@ -32,9 +32,9 @@ object LayoutBoundsPanel {
             devices.forEach { device ->
                 try {
                     if (show) {
-                        layoutBoundsOn(device)
+                        profileGPURenderingOn(device)
                     } else {
-                        layoutBoundsOff(device)
+                        profileGPURenderingOff(device)
                     }
                 } catch (_: Exception) {
                 }

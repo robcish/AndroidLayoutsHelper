@@ -17,11 +17,6 @@ class LayoutBounds : AnAction() {
 
         devices?.forEach { device ->
             device.executeShellCommand("getprop debug.layout", SingleLineReceiver { firstLine ->
-//                val enable = firstLine.toBoolean().not()
-//                device.executeShellCommand(
-//                    "setprop debug.layout $enable ; service call activity 1599295570", NullOutputReceiver()
-//                )
-
                 if (firstLine.toBoolean()) {
                     layoutBoundsOn(device)
                 } else {

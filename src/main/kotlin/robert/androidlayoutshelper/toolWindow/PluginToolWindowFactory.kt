@@ -22,6 +22,7 @@ class PluginToolWindowFactory : ToolWindowFactory {
         contentPanel.add(TransitionAnimationPanel.addTransitionAnimationScalePanel(project))
         contentPanel.add(AnimatorDurationPanel.addAnimatorDurationPanel(project))
         contentPanel.add(HwuiRenderingBarsPanel.addHwuiRenderingBarsPanel(project))
+        contentPanel.add(ProfileGPURenderingPanel.addProfileGPURenderingPanel(project))
 
         val scrollPanel = JBScrollPane(contentPanel)
         scrollPanel.verticalScrollBarPolicy = JBScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED

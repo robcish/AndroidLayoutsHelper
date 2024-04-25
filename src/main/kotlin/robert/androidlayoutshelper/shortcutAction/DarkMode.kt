@@ -23,7 +23,6 @@ class DarkMode : AnAction() {
                 } else {
                     darkModeOff(device)
                 }
-//                device.executeShellCommand("cmd uimode night $enable", NullOutputReceiver())
             })
         }
     }

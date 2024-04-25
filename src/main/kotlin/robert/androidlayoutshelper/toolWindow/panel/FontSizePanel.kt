@@ -21,15 +21,14 @@ object FontSizePanel {
 
         var currentFontSize = startFontSize
         while (currentFontSize <= endFontSize) {
-            val fontSizeText = "%.2f".format(currentFontSize)
+            val fontSizeText = "%.2f".format(currentFontSize).replace(",", ".")
             val button = JButton(fontSizeText)
             button.addActionListener { onFontButtonClick(project, fontSizeText) }
             fontSizePanel.add(button)
             currentFontSize += step
         }
 
-        val textField = JTextField(4)
-        textField.toolTipText = "example: 1.10"
+        val textField = JTextField()
         fontSizePanel.add(textField)
         val customButton = JButton("Set custom")
         customButton.addActionListener { onFontButtonClick(project, textField.text) }

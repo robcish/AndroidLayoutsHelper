@@ -31,8 +31,11 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow icon="AllIcons.Actions.Lightning" id="LAYOUT HELPER"
-                    factoryClass="robert.androidlayoutshelper.toolWindow.PluginToolWindowFactory"/>
+        <toolWindow
+                icon="AllIcons.Actions.Lightning"
+                id="LAYOUT HELPER"
+                factoryClass="robert.androidlayoutshelper.toolWindow.PluginToolWindowFactory"
+        />
     </extensions>
     <actions>
         <action id="robert.androidlayoutshelper.shortcutAction.LayoutBounds" class="robert.androidlayoutshelper.shortcutAction.LayoutBounds"

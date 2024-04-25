@@ -7,18 +7,15 @@ plugins {
 }
 
 group = "Robert R"
-version = "1.1"
+version = "1.2"
 
 repositories {
     mavenCentral()
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     version.set("2023.1.1")
-    type.set("IC") // Target IDE Platform
-
+    type.set("IC")
     plugins.set(listOf("android"))
 }
 

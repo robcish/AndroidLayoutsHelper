@@ -5,17 +5,11 @@ import com.android.ddmlib.NullOutputReceiver
 
 object Commands {
     fun layoutBoundsOn(device: IDevice) {
-        device.executeShellCommand(
-            "setprop debug.layout true ; service call activity 1599295570",
-            NullOutputReceiver()
-        )
+        device.executeShellCommand("setprop debug.layout true ; service call activity 1599295570", NullOutputReceiver())
     }
 
     fun layoutBoundsOff(device: IDevice) {
-        device.executeShellCommand(
-            "setprop debug.layout false ; service call activity 1599295570",
-            NullOutputReceiver()
-        )
+        device.executeShellCommand("setprop debug.layout false ; service call activity 1599295570", NullOutputReceiver())
     }
 
     fun darkModeOn(device: IDevice) {
@@ -65,6 +59,20 @@ object Commands {
     fun hwuiRenderingBarsOff(device: IDevice) {
         device.executeShellCommand(
             "setprop debug.hwui.profile off ; service call activity 1599295570",
+            NullOutputReceiver()
+        )
+    }
+
+    fun profileGPURenderingOff(device: IDevice) {
+        device.executeShellCommand(
+            "setprop debug.hwui.overdraw off ; service call activity 1599295570",
+            NullOutputReceiver()
+        )
+    }
+
+    fun profileGPURenderingOn(device: IDevice) {
+        device.executeShellCommand(
+            "setprop debug.hwui.overdraw show ; service call activity 1599295570",
             NullOutputReceiver()
         )
     }
